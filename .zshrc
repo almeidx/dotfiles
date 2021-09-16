@@ -140,11 +140,8 @@ zinit light zsh-users/zsh-completions
 ### End of Zinit's installer chunk
 
 # Load nvm
-source /usr/share/nvm/init-nvm.sh
-[ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
-source /usr/share/nvm/nvm.sh
-source /usr/share/nvm/bash_completion
-source /usr/share/nvm/install-nvm-exec
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # Load yarn global packages
 export PATH=$PATH:~/.yarn/bin
