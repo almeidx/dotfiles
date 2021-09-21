@@ -20,7 +20,6 @@ GraphQL.vscode-graphql
 iampeterbanjo.elixirlinter
 icrawl.discord-vscode
 JakeBecker.elixir-ls
-liamhammett.inline-parameters
 mikestead.dotenv
 ms-azuretools.vscode-docker
 ms-vscode-remote.remote-containers
