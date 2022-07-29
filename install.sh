@@ -1,5 +1,8 @@
 #!/bin/bash
 
+mv ~/.zshrc ~/.zshrc.old
+mv ~/.zshrc.new ~/.zshrc
+
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
