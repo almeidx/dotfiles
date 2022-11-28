@@ -34,5 +34,5 @@
 	resignlast = "rebase --exec 'git commit --amend --no-edit -n -S'"
 	rename = "!sh -c 'git branch -m `git rev-parse --abbrev-ref HEAD` $1'"
 	amend = commit --amend --no-edit -m
-	cim = "!sh -c 'git commit -m \"`curl http://whatthecommit.com/index.txt`\"'"
-	cimc = "!sh -c 'git commit -m \"chore: `curl http://whatthecommit.com/index.txt`\"'"
+	cim = "!sh -c 'git commit -m \"`curl https://whatthecommit.com/index.txt`\"'"
+	cimc = "!sh -c 'git commit -m \"chore: `curl https://whatthecommit.com/index.txt`\"'"
