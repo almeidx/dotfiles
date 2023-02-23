@@ -14,8 +14,6 @@ git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-~/.oh-my-zs
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 # Git config
-git config --global user.name "almeidx"
-git config --global user.email "almeidx@pm.me"
 git config --global pull.rebase true
 git config --global push.autoSetupRemote true
 
