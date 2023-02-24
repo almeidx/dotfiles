@@ -13,6 +13,11 @@ git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-~/.oh-my-zs
 # Install zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
+# Install JetBrains Mono font
+wget https://download.jetbrains.com/fonts/JetBrainsMono-2.001.zip
+sudo unzip JetBrainsMono-2.001.zip -d /usr/share/fonts
+sudo fc-cache -f -v
+
 # Git config
 git config --global pull.rebase true
 git config --global push.autoSetupRemote true
