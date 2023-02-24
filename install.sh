@@ -15,7 +15,8 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 # Install JetBrains Mono font
 wget https://download.jetbrains.com/fonts/JetBrainsMono-2.001.zip
-sudo unzip JetBrainsMono-2.001.zip -d /usr/share/fonts
+unzip JetBrainsMono-2.001.zip -d /tmp/jetbrains-mono
+mv /tmp/jetbrains-mono/ttf/* /usr/share/fonts/truetype
 sudo fc-cache -f -v
 
 # Git config
