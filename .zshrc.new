@@ -10,12 +10,27 @@ plugins=(
 	zsh-syntax-highlighting
 )
 
+fpath+=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions/src
+
 source $ZSH/oh-my-zsh.sh
 
-# Load nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+eval "$(fnm env --use-on-cd --resolve-engines)"
 
 # Add GPG key
 export GPG_TTY=$(tty)
+
+# Git shortcuts
+alias g='git'
+alias ga='git add'
+alias gb='git branch'
+alias gcb='git checkout -b'
+alias gco='git checkout'
+alias gcm='git commit -m'
+alias gd='git diff'
+alias gfa='git fetch --all --prune'
+alias gpr='git pull --rebase'
+alias gst='git status -sb'
+alias gp='git push'
+alias gpf='git push --force'
+
+alias pn='pnpm'

@@ -19,6 +19,9 @@ unzip JetBrainsMono-2.001.zip -d /tmp/jetbrains-mono
 mv /tmp/jetbrains-mono/ttf/* /usr/share/fonts/truetype
 sudo fc-cache -f -v
 
+# Install fnm
+curl -fsSL https://fnm.vercel.app/install | bash
+
 # Git config
 git config --global pull.rebase true
 git config --global push.autoSetupRemote true
