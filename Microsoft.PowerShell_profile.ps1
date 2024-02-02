@@ -1,8 +1,11 @@
 oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\robbyrussell.omp.json" | Invoke-Expression
 
-fnm env --use-on-cd | Out-String | Invoke-Expression
+fnm env --use-on-cd --resolve-engines | Out-String | Invoke-Expression
 
 Import-Module PSReadLine
+
+function pnpm-shortcut { pnpm @args }
+Set-Alias -Name pn -Value pnpm-shortcut
 
 function git-add() {             git add $args }
 function git-branch() {          git branch $args }
