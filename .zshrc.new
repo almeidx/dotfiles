@@ -14,6 +14,7 @@ fpath+=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions/src
 
 source $ZSH/oh-my-zsh.sh
 
+export PATH=$PATH:~/.local/share/fnm
 eval "$(fnm env --use-on-cd --resolve-engines)"
 
 # Add GPG key
