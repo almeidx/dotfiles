@@ -4,6 +4,9 @@ fnm env --use-on-cd --resolve-engines | Out-String | Invoke-Expression
 
 Import-Module PSReadLine
 
+Remove-Item Alias:\gp -Force
+Remove-Item Alias:\gcm -Force
+
 function p    {	pnpm @args 													}
 
 function g 		{ git @args														}
