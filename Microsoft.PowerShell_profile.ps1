@@ -1,6 +1,8 @@
-oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\robbyrussell.omp.json" | Invoke-Expression
+# oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\robbyrussell.omp.json" | Invoke-Expression
+# oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\emodipt-extend.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\amro.omp.json" | Invoke-Expression
 
-fnm env --use-on-cd --resolve-engines | Out-String | Invoke-Expression
+fnm env --use-on-cd --shell powershell --resolve-engines | Out-String | Invoke-Expression
 
 Import-Module PSReadLine
 
@@ -9,6 +11,7 @@ Remove-Item Alias:\gcm -Force
 Remove-Item Alias:\gcb -Force
 
 function p    {	pnpm @args 													}
+function nr		{ node --run @args										}
 
 function g 		{ git @args														}
 function ga 	{ git add @args												}
