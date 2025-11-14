@@ -34,4 +34,6 @@ alias gst='git status -sb'
 alias gp='git push'
 alias gpf='git push --force'
 
-alias pn='pnpm'
+alias p='pnpm'
+alias cls='clear'
+alias nr='node --run'
