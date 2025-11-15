@@ -35,5 +35,8 @@ alias gp='git push'
 alias gpf='git push --force'
 
 alias p='pnpm'
+alias pi='pnpm install'
+alias pb='pnpm run build'
+
 alias cls='clear'
 alias nr='node --run'
