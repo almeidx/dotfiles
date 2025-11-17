@@ -14,6 +14,7 @@ fpath+=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-completions/src
 
 source $ZSH/oh-my-zsh.sh
 
+# fnm
 export PATH=$PATH:~/.local/share/fnm
 eval "$(fnm env --use-on-cd --resolve-engines)"
 
@@ -24,7 +25,9 @@ export GPG_TTY=$(tty)
 alias g='git'
 alias ga='git add'
 alias gb='git branch'
-alias gcb='git checkout -b'
+alias gcb='git switch -c'
+alias gca='git commit --amend'
+alias gcan='git commit --amend --no-edit'
 alias gco='git checkout'
 alias gcm='git commit -m'
 alias gd='git diff'
@@ -32,11 +35,14 @@ alias gfa='git fetch --all --prune'
 alias gpr='git pull --rebase'
 alias gst='git status -sb'
 alias gp='git push'
-alias gpf='git push --force'
+alias gpf='git push --force-with-lease'
+alias gw='git switch'
 
+# pnpm shortcuts
 alias p='pnpm'
 alias pi='pnpm install'
 alias pb='pnpm run build'
 
+# Other shortcuts
 alias cls='clear'
 alias nr='node --run'
