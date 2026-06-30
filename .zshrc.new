@@ -46,6 +46,7 @@ alias gw='git switch'
 alias p='pnpm'
 alias pi='pnpm install'
 alias pb='pnpm run build'
+alias pd='pnpm run dev'
 
 # Other shortcuts
 alias cls='clear'
