@@ -40,6 +40,8 @@ alias gpr='git pull --rebase'
 alias gr='git rebase'
 alias grc='git rebase --continue'
 alias gst='git status -sb'
+alias gsu='git stash -u'
+alias gsp='git stash pop'
 alias gw='git switch'
 
 # pnpm shortcuts
