@@ -10,6 +10,8 @@
 	gpgsign = true
 [push]
 	autoSetupRemote = true
+[pull]
+	rebase = true
 [alias]
 	ci = commit -m
 	co = checkout
@@ -31,5 +33,4 @@
 	amend = commit --amend --no-edit -m
 	cim = !git commit -m \"$(curl -s https://whatthecommit.com/index.txt)\"
 	cimc = !git commit -m \"chore: $(curl -s https://whatthecommit.com/index.txt)\"
-[pull]
-	rebase = true
+
