@@ -1,5 +1,5 @@
 autoload -Uz compinit vcs_info
-compinit -C
+compinit
 
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000
@@ -9,6 +9,14 @@ setopt HIST_IGNORE_DUPS
 setopt SHARE_HISTORY
 setopt AUTO_CD
 setopt PROMPT_SUBST
+
+bindkey '\e[1;5C' forward-word       # Ctrl+Right
+bindkey '\e[1;5D' backward-word      # Ctrl+Left
+bindkey '\e[H'    beginning-of-line  # Home
+bindkey '\e[F'    end-of-line        # End
+bindkey '\e[3~'   delete-char        # Delete
+bindkey '^H'      backward-kill-word # Ctrl+Backspace
+bindkey '\e[3;5~' kill-word          # Ctrl+Delete
 
 # Git branch
 zstyle ':vcs_info:git:*' formats ' %F{yellow}(%b)%f'
