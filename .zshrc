@@ -62,8 +62,6 @@ alias gsp='git stash pop'
 alias gw='git switch'
 
 # pnpm shortcuts
-alias p='pnpm'
-alias pi='pnpm install'
 alias pb='pnpm run build'
 alias pd='pnpm run dev'
 alias pt='pnpm test'
