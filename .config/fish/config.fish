@@ -2,15 +2,27 @@
 
 function fish_greeting; end
 
-if test -x /home/linuxbrew/.linuxbrew/bin/brew
-    /home/linuxbrew/.linuxbrew/bin/brew shellenv | source
+for brew in /opt/homebrew/bin/brew /home/linuxbrew/.linuxbrew/bin/brew
+    if test -x $brew
+        $brew shellenv | source
+        break
+    end
 end
 
-set -gx PNPM_HOME $HOME/.local/share/pnpm
+switch (uname)
+    case Darwin
+        set -gx PNPM_HOME $HOME/Library/pnpm
+        fish_add_path -g /opt/homebrew/opt/rustup/bin
+    case '*'
+        set -gx PNPM_HOME $HOME/.local/share/pnpm
+end
+
+set -gx BUN_INSTALL $HOME/.bun
 
 fish_add_path -g \
     $HOME/.local/bin \
-    $PNPM_HOME/bin
+    $PNPM_HOME/bin \
+    $BUN_INSTALL/bin
 
 function fish_prompt
     set -l last_status $status
@@ -55,6 +67,9 @@ if status is-interactive
 
     bind ctrl-backspace backward-kill-word
     bind ctrl-delete kill-word
+    if test (uname) = Darwin
+        bind ctrl-h backward-kill-word
+    end
 
     # git
     abbr -a g git
