@@ -59,6 +59,19 @@ function claudex --wraps claude --description 'claude via local gateway'
         claude --model $model $argv
 end
 
+function gwtc --description 'git worktree add ../<repo>.worktrees/<slug> and cd into it'
+    if test (count $argv) -ne 1
+        echo "usage: gwtc <slug>" >&2
+        return 1
+    end
+
+    set -l root (git rev-parse --show-toplevel); or return
+    set -l repo (basename $root)
+    set -l dest (dirname $root)/$repo.worktrees/$argv[1]
+
+    git worktree add $dest; and cd $dest
+end
+
 if status is-interactive
     # fnm
     if type -q fnm
@@ -93,6 +106,11 @@ if status is-interactive
     abbr -a gsu git stash -u
     abbr -a gsp git stash pop
     abbr -a gw git switch
+    abbr -a gwt git worktree
+    abbr -a gwta git worktree add
+    abbr -a gwtl git worktree list
+    abbr -a gwtp git worktree prune
+    abbr -a gwtr git worktree remove
 
     # pnpm / node
     abbr -a pb pnpm run build
@@ -102,3 +120,5 @@ if status is-interactive
 
     abbr -a cls clear
 end
+
+zoxide init fish --cmd cd | source
