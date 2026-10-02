@@ -55,6 +55,10 @@ function gwtc --description 'git worktree add ../<repo>.worktrees/<slug> and cd 
     git worktree add $dest; and cd $dest
 end
 
+function withenv --description 'run a command with environment variables from a .env file'
+    env (grep -v -e '^#' -e '^\s*$' .env) $argv
+end
+
 if status is-interactive
     # fnm
     if type -q fnm
@@ -102,6 +106,7 @@ if status is-interactive
     abbr -a nr node --run
 
     abbr -a cls clear
+    abbr -a we withenv
 end
 
 zoxide init fish --cmd cd | source
