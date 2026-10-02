@@ -42,23 +42,6 @@ function fish_prompt
     set_color normal
 end
 
-function claudex --wraps claude --description 'claude via local gateway'
-    set -l model gpt-6-astra
-
-    env -u ANTHROPIC_API_KEY -u CLAUDE_CODE_OAUTH_TOKEN \
-        ANTHROPIC_BASE_URL=http://127.0.0.1:8317 \
-        ANTHROPIC_AUTH_TOKEN=$CLAUDEX_AUTH_TOKEN \
-        ANTHROPIC_DEFAULT_OPUS_MODEL=$model \
-        ANTHROPIC_DEFAULT_SONNET_MODEL=$model \
-        ANTHROPIC_DEFAULT_HAIKU_MODEL=$model \
-        CLAUDE_CODE_SUBAGENT_MODEL=$model \
-        CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY=1 \
-        CLAUDE_CODE_MAX_CONTEXT_TOKENS=1050000 \
-        CLAUDE_CODE_AUTO_COMPACT_WINDOW=900000 \
-        ENABLE_TOOL_SEARCH=false \
-        claude --model $model $argv
-end
-
 function gwtc --description 'git worktree add ../<repo>.worktrees/<slug> and cd into it'
     if test (count $argv) -ne 1
         echo "usage: gwtc <slug>" >&2
