@@ -109,4 +109,6 @@ if status is-interactive
     abbr -a we withenv
 end
 
-zoxide init fish --cmd cd | source
+if command -q zoxide
+    zoxide init fish --cmd cd | source
+end
